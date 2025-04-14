@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+    themes : none
+}
+li a.active {
+    color: brown ;
+    font-weight: 600;
+}
