@@ -19,6 +19,7 @@ const Navbar = () => {
       <li><NavLink to="/about">About</NavLink></li>
       <li><NavLink to="/contact">Contact</NavLink></li>
       <li><NavLink to="/blogs">Blogs</NavLink></li>
+      <li><NavLink to="/users">Users</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end">
