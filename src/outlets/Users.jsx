@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router';
 const Users = () => {
 
     const data = useLoaderData();
-    console.log(data);
+
     return (
         <>
         <div className='flex gap-5 flex-wrap'>

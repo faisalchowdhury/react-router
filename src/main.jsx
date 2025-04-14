@@ -1,4 +1,4 @@
-import { Children, StrictMode } from 'react'
+import { Children, StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css';
 import { createBrowserRouter ,RouterProvider } from 'react-router'
@@ -8,7 +8,10 @@ import About from './outlets/About';
 import Blogs from './outlets/Blogs';
 import Contact from './outlets/Contact';
 import Users from './outlets/Users.jsx';
+import Users2 from './outlets/Users2.jsx';
 
+
+const fetchData = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
 
 const routerCanBeAnything = createBrowserRouter([
   {
@@ -21,7 +24,13 @@ const routerCanBeAnything = createBrowserRouter([
       {path : 'contact' , Component : Contact},
       {path : 'users' ,
        loader : () => fetch('https://jsonplaceholder.typicode.com/users'), 
-       Component : Users}
+       Component : Users},
+       {
+        path : 'users-2',
+        element : <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
+          <Users2 fetchData={fetchData} ></Users2>
+        </Suspense>
+       }
     ]
   },
   

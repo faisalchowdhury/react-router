@@ -20,6 +20,7 @@ const Navbar = () => {
       <li><NavLink to="/contact">Contact</NavLink></li>
       <li><NavLink to="/blogs">Blogs</NavLink></li>
       <li><NavLink to="/users">Users</NavLink></li>
+      <li><NavLink to="/users-2">Users - 2</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end">
